@@ -24,7 +24,7 @@ class PokedexScreen extends StatefulWidget {
 
 class _PokedexScreenState extends State<PokedexScreen> {
   final controller = PokeController();
-  String pokenome;
+
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +45,8 @@ class _PokedexScreenState extends State<PokedexScreen> {
                                 begin: Alignment.topCenter,
                                 end: Alignment.bottomCenter,
                                 colors: [
-                                  snapshot.data.cortipo1,
-                                  snapshot.data.cortipo2,
+                                 snapshot.data.cortipo1,
+                                 snapshot.data.cortipo2,
                                 ])),
                         height: MediaQuery.of(context).size.height * 0.45,),
                     );
@@ -62,6 +62,7 @@ class _PokedexScreenState extends State<PokedexScreen> {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState != ConnectionState.done) {}
                         if(snapshot.hasError){
+
                         }
                         if (snapshot.hasData) {
                           return Column(
@@ -73,8 +74,8 @@ class _PokedexScreenState extends State<PokedexScreen> {
                                   Text(
                                     snapshot.data.nome.toUpperCase(),
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 30,
+                                        fontSize: 32,
+                                        fontFamily:'Roboto',
                                         color: Colors.white),
                                   ),
                                   SizedBox(
@@ -98,28 +99,19 @@ class _PokedexScreenState extends State<PokedexScreen> {
                               ),
                               Row(
                                 children: [
-                                  FilterChip(
-                                    label: Center(
-                                        child: Text(
-                                      '       ${snapshot.data.type1.toUpperCase()}       ',
-                                      style: TextStyle(
-                                          fontSize: 20, color: Colors.white),
-                                    )),
-                                    onSelected: (bool) {},
-                                    backgroundColor: snapshot.data.cortipo,
-                                    selectedColor: Colors.red,
-                                  ),
-                                  FilterChip(
-                                    label: Center(
-                                        child: Text(
-                                      '       ${snapshot.data.type2.toUpperCase()}       ',
-                                      style: TextStyle(
-                                          fontSize: 20, color: Colors.white),
-                                    )),
-                                    onSelected: (bool) {},
-                                    backgroundColor: Colors.deepPurpleAccent,
-                                    selectedColor: Colors.red,
-                                  ),
+                                  for(var types in snapshot.data.types)
+                                    FilterChip(
+                                      label: Center(
+                                          child: Text(
+                                            '       ${types.type}       ',
+                                            style: TextStyle(
+                                                fontSize: 20, color: Colors.white),
+                                          )),
+                                      onSelected: (bool) {},
+                                         backgroundColor: snapshot.data.cortipo1,
+                                      selectedColor: Colors.red,
+                                    ),
+
                                 ],
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
@@ -162,7 +154,7 @@ class _PokedexScreenState extends State<PokedexScreen> {
                                   ],
                                 ),
                               ),
-                              Text('Evoluções'),
+                              Text(snapshot.data.types.length.toString()),
 
                               Row(
 
