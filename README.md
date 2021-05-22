@@ -1,16 +1,11 @@
-# poke_app
+# PokeAPP
 
-A new Flutter Pokemon aplication
+Aplicativo que exibe pokemons aleatorios utilizando a PokeApi , desenvolvido utilizando inicialmente o padrão MVC 
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+<img src="https://user-images.githubusercontent.com/18319251/119211210-2c35b280-ba87-11eb-8f1c-2ea86b5d6939.png" width="425"/> <img src="https://user-images.githubusercontent.com/18319251/119211227-47082700-ba87-11eb-88a0-a815a90400e5.png" width="425"/> 
+<img src="" width="425"/> <img src="image2.png" width="425"/> 
+<img src="https://user-images.githubusercontent.com/18319251/119211269-859de180-ba87-11eb-87a0-4ee881957ce9.png" width="425"/> <img src="image2.png" width="425"/> !
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
