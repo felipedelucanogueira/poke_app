@@ -1,6 +1,6 @@
 # PokeAPP
 
-Aplicativo que exibe pokemons aleatorios utilizando a PokeApi , desenvolvido utilizando inicialmente o padrão MVC 
+Aplicativo que exibe pokemons aleatorios utilizando a PokeApi , desenvolvido utilizando inicialmente o padrão MVC e depois MVVM
 
 ## Screenshots
 
