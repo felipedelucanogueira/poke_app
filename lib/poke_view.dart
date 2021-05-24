@@ -27,7 +27,7 @@ class _PokedexScreenState extends State<PokedexScreen> {
 
   @override
   Widget build(BuildContext context) {
-    controller.loadPokemon();
+
     return Scaffold(
         body: SafeArea(
       child: Container(
@@ -39,7 +39,14 @@ class _PokedexScreenState extends State<PokedexScreen> {
               StreamBuilder<Pokemon>(
                   stream: controller.streamPokemon.stream,
                   builder: (context, snapshot) {
-                    if (snapshot.connectionState != ConnectionState.active) {}
+                    if (snapshot.connectionState != ConnectionState.active) {
+                        controller.loadPokemon();
+                      return Center(child: CircularProgressIndicator.adaptive(),);
+
+
+
+
+                    }
                     if (snapshot.hasError) {}
                     if (snapshot.hasData) {
                       return Stack(children: [

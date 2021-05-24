@@ -5,7 +5,11 @@ class PokeModel {
   Future<Pokemon>? _pokemon;
   Future<Pokemon>? get pokemon => _pokemon;
 
+  final API api;
+
+  PokeModel({this.api = const  API()});
+
   fetchPokemon(int number) {
-    _pokemon = API().fetchPokemon(number);
+    _pokemon = api.fetchPokemon(number);
   }
 }

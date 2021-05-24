@@ -12,7 +12,7 @@ class Pokemon {
   late List<Types> types;
   Color? cortipo1 = Colors.deepPurple.shade300;
   Color? cortipo2 = Colors.purple.shade900;
-  Pokemon(this.cortipo1, this.cortipo2);
+  Pokemon({this.cortipo1, this.cortipo2, this.nome,this.urlImage,required this.types});
 
   Pokemon.fromJson(Map<String, dynamic> json) {
     nome = json['name'];
